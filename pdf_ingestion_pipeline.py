@@ -255,7 +255,7 @@ def add_to_vector_db(chunks, client, embedding_model, collection_name, embedding
 
     vector_store.add_documents(chunks)
 
-def load_chunk_ingest_scanned_pdf(pdf_path, subject, semester, unit, version, vision_model, client, collection_name, embedding_model_name, embedding_size):
+def load_chunk_ingest_pdf(pdf_path, subject, semester, unit, version, vision_model, client, collection_name, embedding_model_name, embedding_size):
     pdf_name = Path(pdf_path).stem.replace(" ", "_")
     pdf_logger = get_pdf_logger(pdf_name)
     global_logger.info(f"PDF started: {pdf_name}")
@@ -354,4 +354,5 @@ def load_chunk_ingest_scanned_pdf(pdf_path, subject, semester, unit, version, vi
         raise
     else:
         pdf_logger.info("Vector DB ingestion successful!")
+
         global_logger.info(f"PDF completed: {pdf_name}")
