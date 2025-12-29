@@ -1,5 +1,5 @@
 # Detailed Pipeline Diagram
-flowchart TD
+
     A[PDF Path Input] --> B{Valid PDF?}
     B -- No --> X[Abort + Log Warning]
     B -- Yes --> C[Convert PDF to Images<br/>pdf2image]
